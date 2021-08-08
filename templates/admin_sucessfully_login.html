@@ -1,0 +1,33 @@
+<html>
+<head>
+    <style>
+        #first_row
+        {
+            color: red;
+            font-size: 40px;
+        }
+        .second_row_last
+        {
+            font-size: 30px;
+            color: blue;
+        }
+        #ad
+        {
+           margin-top: 100px;
+        }
+
+    </style>
+</head>
+    <body>
+<table border="0" align="center" width="650px" height="500px" bgcolor="#ffe4c4" id="ad">
+    <tr><th id="first_row">ADMIN SUCESSFULLY LOGIN</th></tr>
+    <tr><th class="second_row_last"><a href="{% url 'add_emp_page' %}">ADD EMPLOYEE</a></th></tr>
+    <tr><th class="second_row_last"><a href="{% url 'view_emp_page' %}">View EMPLOYEE'S</a></th></tr>
+    <tr><th class="second_row_last"><a href="{% url 'update_emp_page' %}">UPDATE EMPLOYEE</a></th></tr>
+    <tr><th class="second_row_last"><a href="{% url 'delete_emp_page' %}">DELETE EMPLOYEE</a></th></tr>
+    <tr><th class="second_row_last"><a href="{% url 'home' %}">LOGOUT</a></th></tr>
+
+</table>
+</body>
+
+</html>

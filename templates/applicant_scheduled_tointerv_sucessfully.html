@@ -1,0 +1,26 @@
+<html>
+<head>
+    <style>
+        #as
+        {
+          margin-top: 100px;
+        }
+        #fas
+        {
+            font-size: 30px;
+            color:red
+
+        }
+    </style>
+</head>
+    <body>
+<table align="center" border="2" id="as">
+    {% if ais %}
+    <tr><th id="fas">{{ ais }}</th>
+       {% else %}
+        <tr><th id="fas">{{ aif }}</th>
+    {% endif %}
+</table>
+    <h3><a href="{% url 'interview_schedule' %}">Back_To_assign_interview</a></h3>
+</body>
+</html>

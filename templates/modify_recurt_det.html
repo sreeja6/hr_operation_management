@@ -1,0 +1,58 @@
+
+
+<html>
+<head>
+    <style>
+        #rm
+        {
+            margin-top: 100px;
+        }
+        #firstr
+        {
+            font-size: 30px;
+            color: red;
+            background-color: black;
+        }
+        #secondr
+        {
+            font-size: 25px;
+            color: blue;
+        }
+        #lastr
+        {
+            font-size: 25px;
+            color: red;
+            background-color: black;
+        }
+        #se
+        {
+            font-size: 25px;
+        }
+    </style>
+
+</head>
+    <body>
+<form action="{% url 'go_modify_rec_dt' %}">
+<table align="center" border="2" id="rm" width="600" height="300">
+
+    <tr><th colspan="2" id="firstr">RECURIYMENT MODIFYING PAGE</th></tr>
+    <tr><th id="secondr">SELECT OPERTUNITY CODE</th>
+        <th>
+            <select name="rm" id="se">
+                <option>select</option>
+                {% for x in opp %}
+                <option>{{ x.oppcode }}</option>
+                {% endfor %}
+            </select>
+
+        </th>
+    </tr>
+    <tr><th colspan="2" ><button type="submit" id="lastr">Getdetails</button>
+</table>
+</form>
+
+
+
+</body>
+<h3><a href="{% url 'recuritment_schedule' %}">Recuirtment_Schedule_page</a></h3>
+</html>

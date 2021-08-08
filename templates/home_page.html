@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+<head>
+    <style>
+        #home_page_1strow
+{
+    color: red;
+    background-color:black;
+    font-size: 40px;
+}
+#home_lastrow1
+{
+    background-color: green;
+}
+#home_lastrow2
+{
+      font-size: 30px;
+
+}
+.home_page_second_row
+{
+    font-size:30px;
+}
+#tab
+{
+    margin-top: 100px;
+}
+    </style>
+
+</head>
+    <body>
+    <table align="center" border="2"   width="900px"  padding="6px" id="tab" height="500px">
+    <tr><th id="home_page_1strow" colspan="6">HR OPERATION MANAGEMENT</th></tr>
+    <tr>
+        <th class="home_page_second_row"><a href="{% url 'home' %}">Home</a></th>
+        <th class="home_page_second_row"><a href="{% url 'admin_loginpage' %}">Admin</a></th>
+        <th class="home_page_second_row"><a href="{% url 'manager_loginpage' %}">Manager</a></th>
+        <th class="home_page_second_row"><a href="{% url 'applicant_page' %}">Applicant</a></th>
+        <th class="home_page_second_row"><a href="{% url 'intereviewer_login_page' %}">interviewer</a></th>
+        <th class="home_page_second_row"><a href="{% url 'hr_login_page' %}">Hrhead</a></th>
+    </tr>
+    <tr>
+        <th colspan="6">
+            {% block sree %}
+            <img src="{% static 'images/hr.jpg' %}" height="300px" width="700px">
+                </th>
+        {% endblock %}
+    </tr>
+
+
+    </table>
+</body>
+</html>

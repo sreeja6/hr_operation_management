@@ -1,0 +1,18 @@
+{% extends 'home_page.html'%}
+{% block sree %}
+    <style>
+    .a_first_row
+    {
+        font-size: 28px;
+        color: red;
+    }
+
+    </style>
+    <table align="center" border="0" width="400px"  height="100px">
+    <tr>
+        <th class="a_first_row"><a href="{% url 'applicant_reg_page' %}">Registeration page</a></th>
+        <th class="a_first_row"><a href="{% url 'applicant_loginpage' %}">Login page</a></th>
+
+    </tr>
+    </table>
+{% endblock %}

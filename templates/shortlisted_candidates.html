@@ -1,0 +1,55 @@
+
+<html>
+<head>
+<style>
+    #selcted
+    {
+        margin-top:80px;
+    }
+    #one
+    {
+        font-size: 40px;
+        color:red;
+        background-color: black;
+    }
+    .second
+    {
+        font-size: 32px;
+        color:pink;
+    }
+    .third
+    {
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+
+<table align="center" border="2" id="selcted">
+<tr><th colspan="8" id="one" c>Shortlisted Candidates Details</th></tr>
+<tr>
+    <th class="second">Applicant id</th>
+    <th class="second">Name</th>
+    <th class="second">Qualification</th>
+    <th class="second">Date_Of_Birth</th>
+    <th class="second">Percentage</th>
+    <th class="second">MailId</th>
+    <th class="second">Contact</th>
+    <th class="second">Status</th>
+</tr>
+{% for x in st %}
+    <tr>
+        <th class="third">{{ x.id }}</th>
+        <th class="third">{{ x.name }}</th>
+        <th class="third">{{ x.qualifaction }}</th>
+        <th class="third">{{ x.date_of_birth }}</th>
+        <th class="third">{{ x.percentage }}</th>
+        <th class="third">{{ x.email }}</th>
+        <th class="third">{{ x.mobile_no}}</th>
+        <th class="third">Shotrlisted</th>
+    </tr>
+{% endfor %}
+</table>
+<h3><a href="{% url 'hr_sucessfully_login' %}?a1={{ request.session.hu }}&a2={{ request.session.hp }}">Hr_page</a></h3>
+</body>
+</html>

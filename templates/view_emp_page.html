@@ -1,0 +1,58 @@
+<html>
+<head>
+    <style>
+        #first_row
+        {
+            color: red;
+            font-size: 30px;
+            background-color: black;
+        }
+        .second_row
+        {
+            color:blue;
+
+        }
+        .third_row
+        {
+             font-size: 18px;
+        }
+
+
+        #two
+        {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+    <body>
+<table border="2" align="center" cellpadding="15px" id="two">
+    <tr><th colspan="7" id="first_row">VIEW EMPLOYEE'S TABLE</th></tr>
+    <tr><th class="second_row">EMPLOYEE ID</th>
+     <th class="second_row">EMPLOYEE NAME</th>
+      <th class="second_row">EMPLOYEE NAME</th>
+     <th class="second_row">DESIGNATION</th>
+     <th class="second_row">ADDRESS</th>
+     <th class="second_row">CONTACT</th>
+     <th class="second_row">EMAIL</th></tr>
+{% if view %}
+
+    {% for x in view %}
+        <tr>
+        <th class="third_row">{{ x.emp_no }}</th>
+        <th class="third_row">{{ x.emp_name }}</th>
+        <th class="third_row">{{ x.emp_password }}</th>
+        <th class="third_row">{{ x.emp_designation }}</th>
+        <th class="third_row">{{ x.emp_adress}}</th>
+        <th class="third_row">{{ x.emp_contact }}</th>
+        <th class="third_row">{{ x.emp_email }}</th>
+        </tr>
+
+    {% endfor %}
+{% endif %}
+</table>
+<h3><a href="{% url 'admin_sucessfully_login' %}?a1={{ request.session.userA }}&a2={{ request.session.passdA }}">admin_page</a></h3>
+
+</body>
+
+</html>
+</html>

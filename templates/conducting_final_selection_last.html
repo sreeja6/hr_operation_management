@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+    #first
+        {
+            font-size: 30px;
+            color: red;
+            width:80px
+        }
+        #tab
+        {
+            margin-top: 100px;
+            height: 300px;
+            width: 800px;
+        }
+
+        #third
+        {
+            font-size: 30px;
+        }
+        #opt
+        {
+            width: 70px;
+            height: 30px;
+        }
+        #last
+        {
+            font-size: 25px;
+            color:red;
+            background-color: black;
+        }
+  </style>
+</head>
+    <body>
+
+<table align="center" border="2" id="tab">
+<form action="{% url 'finilazing_candiadates' %}" method="post">
+    {% csrf_token %}
+    <tr><th id="first">CONDUCTING AND PREPARING FINAL SELECTION LIST</th></tr>
+    <tr><th id="third">SELECT AN APPLICANT ID
+        <select name="cfinal" id="opt">
+            {% for x in aid %}
+                <option>{{ x.applicant_id }}</option>
+            {% endfor %}
+        </select></th></tr>
+<tr><th><button type="submit" id="last">Getdetalils</button></th></tr>
+</form>
+</table>
+    <h3><a href="{% url 'home' %}">Home</a></h3>
+    </body>
+</html>

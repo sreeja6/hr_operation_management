@@ -1,0 +1,53 @@
+
+<html>
+<head>
+    <style>
+        #f
+        {
+            margin-top: 100px;
+        }
+        .f1
+        {
+            font-size: 28px;
+        }
+        .f2
+        {
+            font-size: 30px;
+        }
+        #first
+        {
+            font-size: 30px;
+            color: red;
+
+        }
+        #last
+        {
+            font-size: 25px;
+            color:red;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'finalized_candiadates' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="2" width="650" height="400" id="f">
+    <tr><th  colspan="2" id="first">FINALIZING THE CANDIADATES</th></tr>
+        <tr><th class="f1">INTERVEWER ID:</th><th class="f2"><input type="number" value="{{f.emp_id  }}" name="f1" readonly></th></tr>
+        <tr><th class="f1">APPLICANT ID:</th><th class="f2"><input type="number" value="{{f.applicant_id  }}" name="f2" readonly></th></tr>
+        <tr><th class="f1">Schedule Timestamp:</th><th class="f2"><input type="date" value="{{f.schedule_date  }}" name="f3" readonly></th></tr>
+        <tr><th class="f1">RESULT:</th>
+        <th><select name="f4">
+            <option>Selected</option>
+            <option>Reject</option>
+            <option>Shorlisted</option>
+        </select></th>
+        </tr>
+   <tr><th colspan="2"><button type="submit" id="last">ADD TO FINALIZED CANDIADATES</button> </th></tr>
+
+
+    </table>
+    </form>
+</body>
+<a href="{% url 'interviwer_sucessfully_login'%}?a1={{ request.session.iu }}&a2={{ request.session.ip}}">finalize_candidate</a></h3>
+</html>

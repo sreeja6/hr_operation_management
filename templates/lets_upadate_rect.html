@@ -1,0 +1,60 @@
+<html>
+<head>
+    <style>
+        #mr
+        {
+            margin-top: 100px;
+        }
+        .mf
+        {
+            font-size: 25px;
+
+        }
+        #first
+        {
+            font-size: 30px;
+            color: red;
+        }
+        .mi
+        {
+            font-size: 25px;
+        }
+        #last
+        {
+            font-size: 25px;
+            color: red;
+            background-color: black;
+        }
+    </style>
+</head>
+    <body>
+
+<form action="{% url 'updated_rect' %}" method="post">
+    {% csrf_token %}
+<table align="center" border="0" width="650" height="550" id="mr" bgcolor="#ffe4c4" >
+    <tr><th colspan="2" id="first">MODIFYING RECURITMENT DETAILS</th></tr>
+    <tr><th class="mf">OPPERTUNITY CODE</th><th><input type="number" readonly name="p1"  value="{{ update_rect.oppcode }}" class="mi"></th></tr>
+    <tr><th class="mf">QUALIFICATION</th><th><input type="text" name="p2"  value="{{ update_rect.quali }}" class="mi"></th></tr>
+    <tr><th class="mf">REG START DATE</th><th><input type="date" name="p3"  value="{{ update_rect.startdate }}" class="mi" ></th></tr>
+    <tr><th class="mf">AGE LIMIT</th><th><input type="number" name="p4"   value="{{ update_rect.age}}" class="mi"></th></tr>
+    <tr><th class="mf">LAST DATE TO APPLY</th><th><input type="date" name="p5" value="{{ update_rect.lastdate }}" class="mi"></th></tr>
+
+    <tr><th class="mf">DEPARTMENT ID</th><th><input type="text" name="p6" value="{{ update_rect.deptid }}" class="mi"></th></tr>
+
+    <tr><th class="mf">NO OF POSITION</th><th><input type="number" name="p7" value="{{ update_rect.position }}" class="mi"></th></tr>
+
+    <tr><th class="mf">DESCRIPTON</th><th><input type="text" name="p8" value="{{ update_rect.des }}" class="mi"></th></tr>
+
+    <tr><th class="mf">RESPONSIBILITIES</th><th><input type="text" name="p9" value="{{ update_rect.res }}" class="mi"></th></tr>
+
+    <tr><th class="mf">CONTACT NO</th><th><input type="number" name="p10" value="{{ update_rect.cno}}" class="mi"></th></tr>
+    <tr><th colspan="2"><button type="submit" id="last">update</button></th></tr>
+
+
+
+
+</table>
+</form>
+    <h3><a href="{% url 'recuritment_schedule' %}">Recuirtment_Schedule_page</a></h3>
+</body>
+</html>

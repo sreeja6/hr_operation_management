@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+        #first_row
+        {
+            color: red;
+            font-size: 40px;
+        }
+        .Fields_name
+        {
+            font-size: 30px;
+        }
+        #sub
+        {
+           font-size: 25px;
+            color: red;
+            background-color: black;
+        }
+        .Fields
+        {
+          height:30px;
+            width:200px;
+            font-size: 30px;
+        }
+        #messages {
+            color: red;
+            font-size: 25px;
+            background-color: black;
+        }
+        #one
+        {
+            margin-top: 100px;
+        }
+
+
+    </style>
+</head>
+    <body>
+    <form action="{% url 'add_emp_sucessfully' %}" method="post">
+        {% csrf_token %}
+<table align="center" border="0" width="650px" height="500px" bgcolor="#ffe4c4" id="one">
+
+    <tr><th colspan="2" id="first_row">ADD EMPLOYEE'S PAGE</th></tr>
+    <tr><th class="Fields_name">Employee name:</th><th><input type="text" required name="e1" class="Fields"></th></tr>
+    <tr><th class="Fields_name">Password:</th><th><input type="password" required name="e2" class="Fields"></th></tr>
+    <tr><th class="Fields_name">Designation:<th><select name="e3" class="Fields">
+        <option>select</option>
+        <option>Manager</option>
+        <option>Interviewer</option>
+        <option>Employee</option>
+        <option>Hr</option>
+    </select>
+    <tr><th class="Fields_name">Adress:</th><th><input type="textarea" name="e4" class="Fields">
+    <tr><th class="Fields_name">Contact:</th><th><input type="number" required name="e5" class="Fields"></th></tr>
+    <tr><th class="Fields_name">Email:</th><th><input type="email" required name="e6" class="Fields"></th></tr>
+    <tr><th colspan="2"><button type="submit" id="sub">Submit</button> </th></tr>
+</table>
+    </form>
+     {% if messages %}
+    {% for x in messages %}
+        <table align ="center" border="0">
+        <tr><th id="messages">{{ x }}
+        </th></tr>
+        </table>
+        {% endfor %}
+    {% endif %}
+<h3><a href="{% url 'admin_sucessfully_login' %}?a1={{ request.session.userA }}&a2={{ request.session.passdA }}">admin_page</a></h3>
+
+
+
+    </body>
+</html>
+
+</body>
+</html>

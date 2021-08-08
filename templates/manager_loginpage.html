@@ -1,0 +1,51 @@
+
+{% extends 'home_page.html' %}
+{% block sree %}
+<style>
+        .ad_log_heads
+        {
+            font-size: 25px;
+        }
+        .ad_log_fields
+        {
+            height:30px;
+            width:200px;
+            font-size: 30px;
+        }
+        #messages
+        {
+            color:red;
+            font-size: 25px;
+            background-color:black ;
+
+        }
+     #fa
+        {
+            font-size: 20px;
+            color: red;
+        }
+
+    </style>
+     <form action="{% url 'manager_sucessfully_login' %}">
+
+
+<table border="0" align="center" bgcolor="#ffe4c4" height="200px">
+    <tr><th colspan="2" id="fa">Manager Login Page</th></tr>
+    <tr><th class="ad_log_heads">Username</th><th><input type="text" required name="m1" class="ad_log_fields"></th></tr>
+    <tr><th class="ad_log_heads">Password</th><th><input type="password" required name="m2" class="ad_log_fields"></th></tr>
+    <tr><th colspan="2"><button type="submit">Login</button> </th></tr>
+</table>
+     </form>
+    {% if messages %}
+    {% for x in messages %}
+        <table align ="center" border="0">
+        <tr><th id="messages">{{ x }}
+        </th></tr>
+        </table>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+
+
+<h3><a href="{% url 'home' %}">Home</a></h3>

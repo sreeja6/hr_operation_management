@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        .s
+        {
+            font-size: 50px;
+
+        }
+        #r
+        {
+            margin-top: 200px;
+            color: red;
+
+        }
+        .e
+        {
+          text-align:right;
+            font-size: 25px;
+            color:blue;
+        }
+    </style>
+
+</head>
+<body>
+<table align="center" id="r" border="0">
+{% if af %}
+        <tr><th class="s">{{ af }}</th></tr>
+
+    <tr><th class="e"><a href="{% url 'applicant_reg_page' %}" >Back to Registeration Page</a></th></tr>
+
+ {% else %}
+     <tr><th class="s">{{ as }}</th></tr>
+    <tr><th class="e"><a href="{% url 'applicant_page' %}" >Back</a></th></tr>
+
+{% endif %}
+
+</table>
+</body>
+</html>

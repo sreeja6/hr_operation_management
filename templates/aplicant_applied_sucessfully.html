@@ -1,0 +1,28 @@
+<html>
+<head>
+   <style>
+       #j
+       {
+          margin-top: 200px;
+       }
+       #sr
+       {
+          font-size: 30px;
+           color: midnightblue;
+       }
+   </style>
+
+</head>
+    <body>
+
+<table align="center" border="2" id="j">
+    {% if af %}
+    <tr><th id="sr">{{ request.session.us }}:{{ af }}</th></tr>
+        {% else %}
+        <tr><th id="sr">{{ request.session.us }}:{{ as }}</th></tr>
+
+    {% endif %}
+</table>
+</body>
+<h3><a href="{% url 'home' %}">Back</a></h3>
+</html>

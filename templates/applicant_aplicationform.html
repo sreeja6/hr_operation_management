@@ -1,0 +1,91 @@
+<html>
+<head>
+    <style>
+        #first_row
+        {
+            color: red;
+            font-size: 40px;
+        }
+        .Fields_name
+        {
+            font-size: 30px;
+        }
+        #sub
+        {
+           font-size: 25px;
+            color: red;
+            background-color: black;
+        }
+        .Fields
+        {
+          height:30px;
+            width:200px;
+            font-size: 20px;
+        }
+        #messages {
+            color: red;
+            font-size: 25px;
+            background-color: black;
+        }
+        .rad
+        {
+            font-size: 20px;
+        }
+        #a_r
+        {
+            margin-top: 80px;
+        }
+
+    </style>
+</head>
+    <body>
+<form action="{% url 'applicant_application_form' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table align="center" border="0" width="600px" height="400px" bgcolor="#ffe4c4" id="a_r">
+    <tr><th colspan="3" id="first_row">APPLICANT APPLICATION FORM</th></tr>
+    <tr><th  class="Fields_name">Name:</th><th colspan="2"><input type="text" value="{{ data.name }}" name="e1" class="Fields" readonly></th></tr>
+    <tr><th  class="Fields_name">Date of birth:</th><th colspan="2"><input type="date" value="{{ data.date_of_birth }}" name="e2" class="Fields" readonly></th></tr>
+     <tr><th  class="Fields_name">Email:</th><th colspan="2"><input type="email" value="{{ data.email }}" name="e3" class="Fields" readonly></th></tr>
+    <tr><th  class="Fields_name">Gender:</th>
+        <th class="rad">Male<input type="radio" name="e4" value='male' required></th>
+        <th class="rad">Female<input type="radio" name="e4" value="female" required></th></tr>
+       <tr><th class="Fields_name">Mobile_No:</th><th colspan="2"><input type="number" value="{{ data.mobile_no }}" name="e5" class="Fields" readonly></th></tr>
+
+    <tr><th  class="Fields_name">Adress:</th><th colspan="2"><input type="textarea" name="e6" class="Fields" value="{{ data.Adress }}" readonly><tr>
+    <tr><th  class="Fields_name">Qualification:</th>
+    <th>
+        <select name="e7">
+        <option>Select</option>
+        {% for x in ret %}
+        <option>{{ x.quali }}</option>
+
+        {% endfor %}
+    </select>
+    </th></tr>
+     <tr><th  class="Fields_name">Post:</th>
+<th>
+        <select name="e8">
+         <option>Select</option>
+        {% for x in ret %}
+
+        <option>{{ x.des }}</option>
+
+        {% endfor %}
+    </select>
+</th></tr>
+
+
+    <tr><th  class="Fields_name">Percentage:</th><th colspan="2"><input type="number" required name="e9" class="Fields"></th></tr>
+     <tr><th  class="Fields_name">Resume Upload To:</th><th colspan="2"><input type="file" required name="e10" class="Fields"></th></tr>
+
+
+    <tr><th colspan="2"><button type="submit" id="sub">Submit</button> </th></tr>
+</table>
+    </form>
+
+
+    </body>
+</html>
+
+</body>
+</html>

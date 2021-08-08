@@ -1,0 +1,57 @@
+<html>
+<head>
+    <style>
+        #first
+        {
+            font-size: 30px;
+            color: red;
+            width:80px
+        }
+        #tab
+        {
+            margin-top: 100px;
+            height: 300px;
+            width: 800px;
+        }
+        #second
+        {
+            font-size: 30px;
+        }
+        #third
+        {
+            font-size: 30px;
+        }
+        #opt
+        {
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+    <body>
+
+    <table align="center" border="2" id="tab" bgcolor="#ffe4c4">
+    <tr><th id="first">INTERVIEW SCHEDULE PAGE</th></tr>
+    <tr><th id="second">GET AN APPLICANT TO ASSIGN AN INTERVIEW
+    </th></tr>
+<form action="{% url 'assign_interview_for_an_applocant' %}" method="post">
+    {% csrf_token %}
+    <tr><th id="third">SELECT AN APPLICANT ID
+        <select name="ai" id="opt">
+        {% for x in ap %}
+            <option> {{ x.id }}</option>
+        {% endfor %}
+    </select>
+    </th></tr>
+    <tr><th><button type="submit">Getdetails</button></th></tr>
+</form>
+
+</table>
+
+    </body>
+
+
+<h3><a href="{% url 'manager_sucessfully_login' %}?m1={{ request.session.u }}&m2={{ request.session.p }}">Manager_page</a></h3>
+
+
+</html>

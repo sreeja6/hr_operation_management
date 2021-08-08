@@ -1,0 +1,62 @@
+<html>
+<head>
+<style>
+     .Fields_nameR
+        {
+            font-size: 25px;
+        }
+      .FieldsR {
+          height: 30px;
+          width: 200px;
+          font-size: 30px;
+      }
+      #subR
+        {
+           font-size: 30px;
+            color: red;
+            background-color: black;
+        }
+      #oneR
+        {
+            margin-top: 100px;
+        }
+      #first_rowR
+        {
+            color: red;
+            font-size: 30px;
+        }
+
+</style>
+</head>
+    <body>
+<form action="{% url 'save_rect_details' %} " method="post">
+    {% csrf_token %}
+    <table align="center" border="0" width="650px" height="500px" bgcolor="#ffe4c4" id="oneR">
+    <tr><th colspan="2" id="first_rowR">POSTING NEW RECURITMENT DETAILS</th></tr>
+    <tr><th class="Fields_nameR">OPPERTUNITY CODE :</th><th><input type="number" name="r1" required class="FieldsR"></th></tr>
+    <tr><th class="Fields_nameR">QUALIFICATION :</th><th><input type="text" name="r2" required class="FieldsR"></th></tr>
+    <tr><th class="Fields_nameR">REG START DATE :</th><th><input type="date" name="r3" required class="FieldsR"></th></tr>
+    <tr><th class="Fields_nameR">AGE LIMIT :</th><th><input type="number" name="r4" required class="FieldsR"></th></tr>
+    <tr><th class="Fields_nameR">LAST DATE TO APPLY :</th><th><input type="date" name="r5" required class="FieldsR"></th></tr>
+
+    <tr><th class="Fields_nameR">DEPARTMENT ID :</th><th><input type="text" name="r6" required class="FieldsR"></th></tr>
+
+    <tr><th class="Fields_nameR">NO OF POSITION :</th><th><input type="number" name="r7" required class="FieldsR"></th></tr>
+
+    <tr><th class="Fields_nameR">DESCRIPTON :</th><th><input type="text" name="r8" required class="FieldsR"></th></tr>
+
+    <tr><th class="Fields_nameR">RESPONSIBILITIES :</th><th><input type="text" name="r9" required class="FieldsR"></th></tr>
+
+    <tr><th class="Fields_nameR">CONTACT NO :</th><th><input type="number" name="r10" required class="FieldsR"></th></tr>
+    <tr><th colspan="2" ><button type="submit" id="subR">ADD</button></th></tr>
+
+
+
+
+</table>
+</form>
+</body>
+<h3><a href="{% url 'recuritment_schedule' %}">Recuirtment_Schedule_page</a></h3>
+
+
+</html>

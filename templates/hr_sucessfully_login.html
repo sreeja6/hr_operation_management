@@ -1,0 +1,35 @@
+<html>
+<head>
+    <style>
+        #one
+        {
+            font-size: 50px;
+            color: red;
+        }
+        #tab
+        {
+
+            margin-top: 100px;
+            height: 400px;
+            width:700px
+        }
+        .second
+        {
+            font-size: 30px;
+            color: darkblue;
+        }
+    </style>
+</head>
+    <body>
+<table align="center" border="2" id="tab">
+    <tr><th id="one">HR HOME PAGE</th></tr>
+    <tr><th class="second"><a href="{% url 'shortlisted_candiadates' %}">VIEW SHORTLISTED APPLICANTS</a></th></tr>
+    <tr><th class="second"><a href="{% url 'selected_candiadates' %}">VIEW SELECTED APPLICANTS</a></th></tr>
+    <tr><th class="second"><a href="{% url 'rejected_candiadates' %}">VIEW REJECTED APPLICANTS</a></th></tr>
+    <tr><th class="second"><a href="{% url 'home' %}">LOGOUT</a></th></tr>
+
+
+
+</table>
+</body>
+</html>

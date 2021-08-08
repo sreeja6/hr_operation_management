@@ -1,0 +1,68 @@
+<html>
+<head>
+    <style>
+        #first_row
+        {
+            color: red;
+            font-size: 30px;
+            background-color: black;
+        }
+        .second_row
+        {
+            color:blue;
+
+        }
+        .third_row
+        {
+             font-size: 18px;
+        }
+
+
+        #two
+        {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+    <body>
+<table border="2" align="center" cellpadding="15px" id="two">
+    <tr><th colspan="11" id="first_row">VIEW All Recuritment Details</th></tr>
+    <tr><th class="second_row">OPPCODE</th>
+     <th class="second_row">QUALIFICATION</th>
+      <th class="second_row">REGISTERATION STARTDATE</th>
+     <th class="second_row">AGE LIMIT</th>
+        <th class="second_row">LAST DATE TO APPLY</th>
+     <th class="second_row">DEPARTMENT ID</th>
+     <th class="second_row">NO OF POSITIONS</th>
+     <th class="second_row">DESCRIPTION</th>
+     <th class="second_row">RESPONSIBILITIES</th>
+    <th class="second_row">CONTACT NO</th>
+    <th class="second_row">Delete</th>
+
+    </tr>
+
+
+    {% for x in d %}
+        <tr>
+        <th class="third_row">{{ x.oppcode }}</th>
+        <th class="third_row">{{ x.quali }}</th>
+        <th class="third_row">{{ x.startdate }}</th>
+        <th class="third_row">{{ x.age }}</th>
+        <th class="third_row">{{ x.lastdate}}</th>
+        <th class="third_row">{{ x.deptid}}</th>
+        <th class="third_row">{{ x.position }}</th>
+        <th class="third_row">{{ x.des }}</th>
+        <th class="third_row">{{ x.res }}</th>
+        <th class="third_row">{{ x.cno }}</th>
+        <th class="third_row">
+            <a href="{% url 'lets_delete_rect' %}?d={{ x.oppcode }}">delete</a>
+        </th>
+        </tr>
+
+    {% endfor %}
+</table>
+<h3><a href="{% url 'recuritment_schedule' %}">Recuirtment_Schedule_page</a></h3>
+</body>
+
+</html>
+</html>

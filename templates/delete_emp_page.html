@@ -1,0 +1,57 @@
+<html>
+<head>
+    <style>
+        #four
+        {
+           cellpadding:15px ;
+            margin-top: 100px;
+        }
+        .second_row
+        {
+            color: crimson;
+            font-size: 28px;
+        }
+         #first_row
+        {
+            color: red;
+            font-size: 30px;
+            background-color: black;
+        }
+         .third_row
+        {
+            font-size: 30px;
+        }
+    </style>
+</head>
+    <body>
+<table border="2"align="center" id="four">
+    <tr><th colspan="5" id="first_row">DELETE PAGE</th></tr>
+   <tr> <th class="second_row">EMPLOYEEID</th>
+    <th class="second_row">EMPLOYEENAME</th>
+    <th class="second_row"> DESIGNATION</th>
+    <th class="second_row">ADDRESS</th>
+     <th class="second_row">DELETE</th></tr>
+
+    {% if delete %}
+    {% for x in delete %}
+        <tr><th class="third_row">{{ x.emp_no }}</th>
+        <th class="third_row">{{ x.emp_name }}</th>
+        <th class="third_row">{{ x.emp_designation }}</th>
+        <th class="third_row">{{ x.emp_adress }}</th>
+        <th class="third_row">
+            <form action="{% url 'deleted_emp' %}">
+            <input type="hidden" value="{{ x.emp_no }}" name="d1">
+            <button type="submit">Delete
+            </button>
+            </form>
+        </th>
+        </tr>
+    {% endfor %}
+{% endif %}
+
+</table>
+</body>
+<h3><a href="{% url 'admin_sucessfully_login' %}?a1={{ request.session.userA }}&a2={{ request.session.passdA }}">admin_page</a></h3>
+
+</html>
+

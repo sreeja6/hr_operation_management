@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+        #first_row
+        {
+          font-size: 40px;
+            color: red;
+        }
+        .middle_row
+        {
+            color: blue;
+            font-size: 30px;
+        }
+        #last_row
+        {
+         color: red;
+            font-size: 25px;
+        }
+        #md
+        {
+            margin-top: 90px;
+        }
+
+    </style>
+</head>
+    <body>
+<table align="center" border="0" height="500" width="700" bgcolor="#ffe4c4" id="md">
+<tr><th id="first_row">MANAGER HOME PAGE</th></tr>
+    <tr><th class="middle_row"><a href="{% url 'recuritment_schedule' %}">RECURITMENT</a></th></tr>
+    <tr><th  class="middle_row"><a href="{% url 'interview_schedule' %}">INTERVIEW SCHEDULE</a></th></tr>
+    <tr><th id="last_row"><a href="{% url 'home' %}"> LOGOUT</a></th></tr>
+</table>
+</body>
+</html>

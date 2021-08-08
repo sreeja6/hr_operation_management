@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+         #first_row
+         {
+             font-size: 45px;
+             color: red;
+         }
+         .middle_row
+         {
+             color: blue;
+             font-size: 25px;
+         }
+         #rect
+         {
+             margin-top: 100px;
+         }
+    </style>
+
+</head>
+<body>
+<table align="center" border="0" height="500" width="800" bgcolor="#ffe4c4" id="rect">
+    <tr><th id="first_row" >RECURITMENT SCHEDULE</th></tr>
+    <tr><th class="middle_row"><a href="{% url 'adding_new_recurt' %}">NEW RECURITMENT DETAILS</a></th></tr>
+    <tr><th class="middle_row"><a href="{% url 'view_all_rect' %}">VIEW ALL RECURITMENT DETAILS</a></th></tr>
+
+    <tr><th class="middle_row"><a href="{% url 'modify_recurt_det' %}">MODIFYING RECURITMENT DETAILS</a></th></tr>
+    <tr><th class="middle_row"><a href="{% url 'delete_recurt_det' %}">DELETING RECURITMENT DETAILS</th></tr>
+
+</table>
+</body>
+<h3><a href="{% url 'manager_sucessfully_login' %}?m1={{ request.session.u }}&m2={{ request.session.p }}">Manager_page</a></h3>
+
+</html>
